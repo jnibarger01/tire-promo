@@ -7,6 +7,18 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module">
+      const boot = async () => {
+        const isGitHubPages = window.location.hostname.endsWith("github.io");
+        if (isGitHubPages) {
+          const pagesEntry = "/tire-promo/assets/index.js";
+          await import(/* @vite-ignore */ pagesEntry);
+        } else {
+          await import("/src/main.tsx");
+        }
+      };
+
+      boot();
+    </script>
   </body>
 </html>
