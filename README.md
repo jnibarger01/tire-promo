@@ -11,3 +11,4 @@ GitHub Pages project site:
 - Runs entirely in the browser
 - Uses localStorage for persistence
 - No backend required
+# tire-promo
